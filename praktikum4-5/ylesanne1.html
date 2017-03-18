@@ -69,9 +69,23 @@
 			}
 			</style>
 			<script>
-			window.onload = function() {
-			// lehe laadimine lõpetatud. Siia funktsiooni sisse kirjutan elementide mõjutamise käsud
-			}
+
+		window.onload = function () {
+     	var marklaudElement = document.getElementById("content");
+ 
+     	function uusAsukoht(marklaud) {
+         	var xKoordinaat = String(Math.floor(Math.random()*100))+"%";
+         	var yKoordinaat = String(Math.floor(Math.random()*100))+"%";
+         	marklaud.style.left = xKoordinaat;
+         	marklaud.style.top = yKoordinaat;
+     	}
+ 
+     	marklaudElement.onclick = function () {
+        	uusAsukoht(this);
+     	}
+
+ 		}
+
 			</script>
 
 
