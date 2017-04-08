@@ -23,13 +23,19 @@ $border="10"; // vaikimisi väärtus
     	$colortext=htmlspecialchars($_POST["border"]);
 	}
 
+$bordercolor="#000"; // vaikimisi väärtus
+	if (isset($_POST["bordercolor"]) && $_POST["bordercolor"]!="") {
+    	$colortext=htmlspecialchars($_POST["bordercolor"]);
+	}
+
  ?>
 
-div {
+#box {
 	color: <?php echo $colortext; ?>;
 	background-color: <?php echo $background; ?>;
-	border-width: 10px;
-	border-color: black;
+	border-width: <?php echo $border; ?>;
+	border-color: <?php echo $bordercolor; ?>;
+	border-style: solid;
 	}
 
 </style>
@@ -38,7 +44,7 @@ div {
 
 <body>
 
-<div>
+<div id="box">
 <?php
 	if(isset($_POST) && array_key_exists("text",$_POST))
         {
